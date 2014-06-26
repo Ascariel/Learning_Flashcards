@@ -8,7 +8,7 @@ set :repo_url, 'git@github.com:Ascariel/Learning_Flashcards.git'
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 # Default deploy_to directory is /var/www/my_app
- set :deploy_to, '/var/www/flashcards'
+ set :deploy_to, '/home/ascariel/www/flashcards'
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -33,6 +33,7 @@ set :repo_url, 'git@github.com:Ascariel/Learning_Flashcards.git'
 # set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
 set :rails_env, "staging"
 
+
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
@@ -41,8 +42,7 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      # Your restart mechanism here, for example:
-      # execute :touch, release_path.join('tmp/restart.txt')
+      
     end
   end
 
