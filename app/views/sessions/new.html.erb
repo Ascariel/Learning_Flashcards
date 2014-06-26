@@ -1,0 +1,16 @@
+
+
+<br>
+<% if flash[:failed_login] %>
+	<div style="color:red; font-style:italic"> <%= flash[:failed_login] %> </div> 
+<br>
+<% end %>
+<%= form_for(:session, url: session_path) do |form|%> 	
+<div>			<!-- #FORM BUILDER OBJECT, ITS A HELPER METHOD -->
+<%= form.label :email %>	<!-- DISPLAYS NAME COLUMN OF @DECKS AS LABEL -->
+<%= form.text_field :email %>
+</div>
+<%= form.submit "Log in" %>
+<%end%>
+<br>
+<%= link_to "Back to home", root_path %>

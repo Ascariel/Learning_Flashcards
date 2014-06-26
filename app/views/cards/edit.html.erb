@@ -1,0 +1,10 @@
+<p>Updating <p> 
+
+	
+	<%= form_for(@card, url: deck_card_path, method: :put)  do |f| %>
+	 Front card: <%= f.text_field :front  %>
+	 Back card: <%= f.text_field :back  %>
+	 Update <%= f.submit "Update card" %>
+	 <% end %>
+
+	  <%= link_to("Return to cards", [@deck]) %> 

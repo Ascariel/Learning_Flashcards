@@ -1,0 +1,28 @@
+<h1><b>Welcome to "The Cards Game!"<b></h1>
+
+<% if current_user %>
+<h3>Please choose a deck:</h3>
+<br>
+
+<div> <%= link_to "Create New Deck", new_deck_path %> </div>
+<br><br>
+<div>Available Decks </div> <br>
+<div> 
+<% @decks.each do |d| %>
+	<div> 
+	
+		<%= link_to d.name, d %> 
+		<%= link_to "Edit deck", edit_deck_path(d) %>
+		<%= link_to "Delete deck", d, method: :delete, confirm: 'You sure about this???' %>
+
+	</div> <br>
+	
+<% end%> 
+<% else %>
+<p>Please sign in/register in order to play! <%= link_to "Back to log screen", root_path %></p>
+
+<% end %>
+	<% if @user %>
+	<%= @user.all.inspect %>
+	<% end %>
+

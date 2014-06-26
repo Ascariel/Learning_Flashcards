@@ -1,0 +1,19 @@
+Testing Card Add Feature
+<br><br>
+
+
+	<%= form_for([@deck, @card])  do |f| %>  <!-- I USED BAD CODING @card, url: deck_cards_path(@deck) -->
+	 Front card: <%= f.text_field :front  %>
+	 Back card: <%= f.text_field :back  %>
+	 Update <%= f.submit "Create card" %>
+	 <% end %>
+	 <br><br>
+
+	  <%= link_to("Return to cards", [@deck]) %>  
+
+
+
+	 <!-- Correct url - url: deck_cards_path(@deck) -->
+
+
+	 <!-- @card, url: deck_cards_path(@deck) -->

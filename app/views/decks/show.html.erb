@@ -1,0 +1,25 @@
+<br>
+<p>Great Choice!!</p>
+<% if true %>
+<% end %>
+<p>You are currently using the <b><%= @deck.name %></b> deck!! Enjoy!<p>
+
+	<p> This deck contains the following cards: </p>
+	<br>
+	<% @cards.each do |card| %>
+		<p>
+		Front: <%= link_to card.front, [@deck, card] %> <!-- 	can also be [card.deck, card]-->
+
+		<%= link_to("Update card", edit_deck_card_path(card.deck, card) ) %> 
+		<%= link_to("Delete Card", [@deck, card], method: :delete)%></p> 
+		<!-- i used "/decks/#{params[:id]}/cards/#{card.id}"-->
+
+	<% end %>
+
+<p> Now try guessing what each of the back of these cards is! <p>
+<%= link_to "Add a new Card", new_deck_card_path(@deck, @card) %>
+<br><br><br>
+<%= link_to "Return to Home", decks_path %>
+
+
+<!--link to create card deck_cards_path(@deck)  -->

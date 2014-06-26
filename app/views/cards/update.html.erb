@@ -1,0 +1,24 @@
+<h2> Congratulations!</h2>
+
+
+<h4> You have succesfully updated the front of your card 
+<!-- If cards are equal(no real update), then dont show from "card" to "card"-->
+	<% if @card_before_update.front !=  @card.front %>
+		from <i><%= @card_before_update.front  %> </i>
+	<% end %>
+to <i> <%= @card.front %> </i> 
+</h4> 
+
+<h4> You have succesfully updated the back of your card 
+<!-- If cards are equal(no real update), then dont show from "card" to "card"-->
+	<% if @card_before_update.back !=  @card.back %>
+		from <i><%= @card_before_update.back  %> </i>
+	<% end %>
+to <i> <%= @card.back %> </i> 
+</h4> 
+
+
+
+<br><br>
+<div><%= link_to("Return to #{@deck.name} deck", [@deck]) %></div>
+

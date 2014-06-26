@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flashcards</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+</head>
+<body>
+<p>Credits...By Pablo, from Tutorial Videos :), (yep, this looks very anti-esthetic up here xD)
+	
+</p>
+
+<%if sign_in? %>
+	<p> User: <b><%= current_user.email %> </b> 
+	<%= link_to "Logout", session_path, method: :delete %>
+	</p>
+<% else %>
+	<div> <%= link_to("Sign in", new_session_path) %> <%= link_to("Sign up", new_user_path) %> </div>
+<% end %>
+
+<%= yield %>
+
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+<br>
+<%= form_for(@deck) do |form|%> 	
+<div>			<!-- #FORM BUILDER OBJECT, ITS A HELPER METHOD -->
+<%= form.label :name %>	<!-- DISPLAYS NAME COLUMN OF @DECKS AS LABEL -->
+<%= form.text_field :name%>
+</div>
+<%= form.submit "Update Deck" %>
+
+<%end%>
+<br>
+<%= link_to "return", decks_path %>
+
